@@ -267,6 +267,20 @@ document.querySelectorAll('.btn').forEach(button => {
     });
 });
 
+// Hero Image Auto Switch (Fade)
+const heroSlides = document.querySelectorAll(".image-slider img");
+
+if (heroSlides.length > 0) {
+    let heroIndex = 0;
+
+    setInterval(() => {
+        heroSlides[heroIndex].classList.remove("active");
+        heroIndex = (heroIndex + 1) % heroSlides.length;
+        heroSlides[heroIndex].classList.add("active");
+    }, 3000); // ganti setiap 3 detik
+}
+
+
 // Add ripple styles dynamically
 const style = document.createElement('style');
 style.textContent = `
